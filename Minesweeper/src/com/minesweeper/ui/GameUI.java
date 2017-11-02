@@ -25,15 +25,7 @@ public class GameUI{
 	
 	public void run()
 	{
-		
 		new GameMenu();
-		//ask for mode
-		
-		//m 10 , x 9 , y 9;
-		//m 40 , x 16 , y 16;
-		//m 99 , x 16 , y 30;
-		
-		//build(10,9,9);
 	}
 	
 	public void build(int minecount,int gx, int gy) {
@@ -71,15 +63,6 @@ public class GameUI{
 				
 			}
 		}
-		
-		/*b1 = new JButton();		
-		b1.setText("9");
-		b1.addActionListener(this);
-		b1.setName("btn1");		
-		b2 = new JButton();
-		b2.setText("0");		
-		panel.add(b1,gbc);
-		panel.add(b2);*/
 		
 		frame.add(panel);
 		frame.setLocationRelativeTo(null);
