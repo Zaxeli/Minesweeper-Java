@@ -21,18 +21,13 @@ public class BlockListener implements ActionListener, MouseListener{
 		b = incButton;
 		
 	}
-
 	
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
 		b.isClicked=true;
 		clickBlock(b);
 	}
-
-
-	@Override
+	
 	public void mouseClicked(MouseEvent arg0) {
-		// TODO Auto-generated method stub
 		System.out.println("mouseclicked");
 		if(SwingUtilities.isLeftMouseButton(arg0)) {
 			System.out.println("Left mouseclicked");
@@ -40,32 +35,16 @@ public class BlockListener implements ActionListener, MouseListener{
 		
 	}
 
-
-	@Override
 	public void mouseEntered(MouseEvent arg0) {
-		// TODO Auto-generated method stub
 		System.out.println("mouseentered");
-		
 	}
 
-
-	@Override
 	public void mouseExited(MouseEvent arg0) {
-		// TODO Auto-generated method stub
 		System.out.println("mouseexited");
-		
-		
 	}
 
-
-	@Override
 	public void mousePressed(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		//System.out.println("mousepressed");
 		if(SwingUtilities.isRightMouseButton(arg0)) {
-			
-			//System.out.println("Left mousepressed \n mark");
-			
 			if(b.flagged) {
 				b.setEnabled(true);
 				b.setText(" ");
@@ -76,24 +55,18 @@ public class BlockListener implements ActionListener, MouseListener{
 				b.setText("F");
 				b.flagged=true;
 			}
-			
 		}
 	}
 
-
-	@Override
 	public void mouseReleased(MouseEvent arg0) {
-		// TODO Auto-generated method stub
 		System.out.println("mousereleased");
 		if(SwingUtilities.isLeftMouseButton(arg0)) {
 			System.out.println("Left mousereleased");
-			//clickBlock();
 		}
 		
 	}
 	public void clickBlock(Block clickedBlock) {
 		GridBagLayout gb = (GridBagLayout) gameUI.panel.getLayout();
-		//Block b = (Block) e.getSource();
 		GridBagConstraints gbc = gb.getConstraints(clickedBlock);
 		gameUI.uncovered++;
 		
@@ -101,23 +74,17 @@ public class BlockListener implements ActionListener, MouseListener{
 		
 		if(gameUI.start==true) {
 			gameUI.mapmines(gameUI.mines,gameUI.boardx,gameUI.boardy);
-			//int reloc = b.cleararound(blar, gbc.gridx, gbc.gridy);
-			//Here TO DO
 			
 			gameUI.mapmines(clickedBlock.checkaround(gameUI.blar, gbc.gridx, gbc.gridy),gameUI.boardx,gameUI.boardy);
 			clickedBlock.cleararound(gameUI.blar, gbc.gridx, gbc.gridy);
 			gameUI.start=false;
 		}
 		
-		
-		
 		if(clickedBlock.checkmine()) {
 			gameUI.l1.setText("m");
 			gameUI.end(false);
-			//Popup: lose
 		}
 		else{
-			//l1.setText(b.getText());
 			gameUI.l1.setText(Integer.toString(clickedBlock.checkaround(gameUI.blar, gbc.gridx, gbc.gridy)));
 			if(clickedBlock.checkaround(gameUI.blar, gbc.gridx, gbc.gridy)==0) {
 				gameUI.l1.setText("0");
@@ -138,10 +105,7 @@ public class BlockListener implements ActionListener, MouseListener{
 		gameUI.frame.repaint();	
 		
 		System.out.println("button "+clickedBlock.getName()+" clicked");
-		
-	
 	}
-
 
 	private void clickAround() {
 	}
