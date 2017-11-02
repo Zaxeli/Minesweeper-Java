@@ -18,9 +18,8 @@ public class MenuModeListener implements ActionListener{
 		gameUI = new GameUI();
 		menuframe=frame;
 		mode = modeNumber;
-		
-		
 	}
+	
 	public void actionPerformed(ActionEvent e) {
 		switch(mode) {
 		case 0:
@@ -38,7 +37,5 @@ public class MenuModeListener implements ActionListener{
 				
 		}
 		menuframe.dispose();
-		
 	}
-
 }
