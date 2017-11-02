@@ -14,7 +14,6 @@ public class EndListener implements ActionListener{
 		container = frame;
 	}
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
 		JButton endButton= (JButton) e.getSource();
 		
 		if(endButton.getText()=="New Game") {
@@ -23,7 +22,5 @@ public class EndListener implements ActionListener{
 		}
 		
 		container.dispose();;
-		
 	}
-
 }
